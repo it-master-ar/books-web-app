@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
-    "dev": "babel --watch src --out-dir lib",
+    "dev": "webpack ./src/index.js lib/index.js",
     "eslint": "eslint . --ext .js",
     "eslint:fix": "eslint . --fix"
   },

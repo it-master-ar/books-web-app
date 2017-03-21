@@ -1,20 +1,24 @@
-const hello = () => {
-  console.log('Hello World!')
-}
+// const hello = () => {
+//   console.log('Hello World!')
+// }
+//
+// hello()
+//
+// class Person {
+//   constructor () {
+//     console.log('')
+//   }
+// }
+//
+// const p1 = new Person()
+// p1.hello()
+// p1.hello()
+// p1.hello()
+// p1.hello()
+// p1.hello()
+// p1.hello()
+// p1.hello()
 
-hello()
+import text from './second'
 
-class Person {
-  constructor () {
-    console.log('')
-  }
-}
-
-const p1 = new Person()
-p1.hello()
-p1.hello()
-p1.hello()
-p1.hello()
-p1.hello()
-p1.hello()
-p1.hello()
+document.write(text)
