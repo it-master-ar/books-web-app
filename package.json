@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src --out-dir lib",
+    "dev": "babel --watch src --out-dir lib",
     "eslint": "eslint . --ext .js",
     "eslint:fix": "eslint . --fix"
   },
@@ -19,6 +20,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-node": "^4.2.1",
     "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^2.1.1"
+    "eslint-plugin-standard": "^2.1.1",
+    "webpack": "^2.2.1"
   }
 }
