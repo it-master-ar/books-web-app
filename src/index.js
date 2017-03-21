@@ -19,6 +19,7 @@
 // p1.hello()
 // p1.hello()
 
+import './css/main.css'
 import text from './second'
 
 document.write(text)

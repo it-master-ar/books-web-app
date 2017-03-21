@@ -3,10 +3,10 @@ module.exports = {
   output: {
     path: __dirname,
     filename: 'lib/index.js'
+  },
+  module: {
+    loaders: [
+      { test: /\.css$/, loader: 'style-loader!css-loader' }
+    ]
   }
-  // module: {
-  //   loaders: [
-  //     { test: /\.css$/, loader: 'style!css' }
-  //   ]
-  // }
 }
