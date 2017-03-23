@@ -1,10 +1,9 @@
-import './css/main.css'
-import text from './second'
+import apiService from './api'
 
-const hello = () => {
-  console.log('Hello World!')
-}
-
-hello()
-
-document.write(text)
+apiService.getBooks()
+  .then((res) => {
+    console.log(res.data)
+  })
+  .catch((err) => {
+    console.log('Error!', err)
+  })
