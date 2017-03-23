@@ -19,15 +19,20 @@ if (process.env.ENV === 'prod') {
 
 module.exports = {
   entry: './src/index.js',
+
+  devtool: 'source-map',
+
   output: {
     path: __dirname,
     filename
   },
+
   module: {
     loaders: [
       { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.js$/, loader: 'babel-loader' }
     ]
   },
+
   plugins
 }
