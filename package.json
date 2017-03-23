@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --progress --colors",
-    "build": "ENV=prod webpack --progress --colors",
+    "build": "ENV=prod webpack --progress --colors -p",
     "build:dev": "ENV=dev webpack --progress --colors",
     "eslint": "eslint . --ext .js",
     "eslint:fix": "eslint . --fix"
@@ -25,7 +25,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^2.1.1",
     "style-loader": "^0.15.0",
-    "webpack": "^2.2.1"
+    "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.2"
   },
   "pre-commit": ["eslint"]
