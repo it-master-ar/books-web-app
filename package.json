@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "ENV=dev webpack-dev-server --progress --colors",
-    "prebuild": "echo build",
+    "prebuild": "echo pre build",
     "build": "ENV=prod webpack --progress --colors -p",
     "build:dev": "ENV=dev webpack --progress --colors",
     "eslint": "eslint . --ext .js",
