@@ -4,6 +4,7 @@ const storage = {}
 
 storage.get = function (key) {
   let item = localStorage.getItem(key)
+  if (!item) { return null }
 
   try {
     item = JSON.parse(item)
@@ -15,6 +16,8 @@ storage.get = function (key) {
 }
 
 storage.set = function (key, value) {
+  if (!value) { return }
+
   if (typeof value === 'object') {
     value = JSON.stringify(value)
   }
