@@ -1,3 +1,4 @@
+import './css/main.css'
 import Vue from 'vue/dist/vue.js'
 
 import apiService from './api-fetch'
@@ -20,14 +21,18 @@ new Vue({ // eslint-disable-line
   },
 
   created () {
-    this.getBooks()
+    if (!this.books || !this.books.length) {
+      this.getBooks()
+    }
   },
 
   methods: {
     createBook () {
       apiService.createBook(this.newBook)
-        .then(res => console.log('✅', res))
-        .catch(err => console.log('❌', err))
+        .then(() => {
+          this.books.push(this.newBook)
+          this.newBook = { title: '', author: '' }
+        })
     },
 
     getBooks () {

@@ -3,44 +3,53 @@
     <meta charset="utf-8"/>
   </head>
   <body>
-    <header>
-      <nav>
-        <h1>Books App</h1>
-      </nav>
+    <main id="app">
+      <header>
+        <nav>
+          <h1>
+            Books App
+            <a @click.prevent="getBooks">🔄</a>
+        </nav>
 
-      <hr>
-    </header>
+        <hr>
+      </header>
 
-    <div id="app">
-      <section>
-        <table>
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Author</th>
-              <th><a @click.prevent="getBooks">🔄</a></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="b in books">
-              <td> {{ b.title }} </td>
-              <td> {{ b.author }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+      <div class="container">
+        <section>
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>
+                  Author
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="b in books">
+                <td> {{ b.title }} </td>
+                <td> {{ b.author }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
 
-      <section>
-        <form>
-          <fieldset @submit.prevent="createBook">
-            <legend>Create Book</legend>
-            <input type="text" placeholder="Author" v-model="newBook.author">
-            <input type="text" placeholder="Title" v-model="newBook.title">
-            <input type="submit" value="Create">
-          </fieldset>
-        </form>
-      </section>
-    </div>
+        <section>
+          <form @submit.prevent="createBook">
+            <fieldset>
+              <legend>Create Book</legend>
+              <p>
+                <input type="text" placeholder="Author" v-model="newBook.author">
+              </p>
+              <p>
+                <input type="text" placeholder="Title" v-model="newBook.title">
+              </p>
+              <input type="submit" value="Create">
+            </fieldset>
+          </form>
+        <section>
+      </div>
+    </main>
 
     <script type="text/javascript" src="lib/index.js" charset="utf-8"></script>
   </body>
