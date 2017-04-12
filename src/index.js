@@ -1,8 +1,12 @@
 import './css/main.css'
 import Vue from 'vue/dist/vue.js'
 
-import apiService from './api-fetch'
-import storage from './storage'
+import apiService from './services/api-fetch'
+import storage from './services/storage'
+
+import book from './components/book'
+
+Vue.component('book', book)
 
 new Vue({ // eslint-disable-line
   el: '#app',

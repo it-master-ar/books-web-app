@@ -16,22 +16,10 @@
 
       <div class="container">
         <section>
-          <table>
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>
-                  Author
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="b in books">
-                <td> {{ b.title }} </td>
-                <td> {{ b.author }}</td>
-              </tr>
-            </tbody>
-          </table>
+          <h3>Books</h3>
+          <ul>
+            <book v-for="b in books" :book="b">
+          </ul>
         </section>
 
         <section>

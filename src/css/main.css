@@ -10,15 +10,8 @@ html {
   justify-content: space-around;
 }
 
-th {
-  padding: 5px;
-  border-bottom: 1px solid #3d3d3d;
-  padding-right: 20px;
-}
-
-td {
-  padding: 5px;
-  padding-right: 20px;
+.author {
+  color: steelblue;
 }
 
 section {
