@@ -18,4 +18,12 @@ fetchService.post = function (path, body, headers) {
   })
 }
 
+fetchService.del = function (path, body, headers) {
+  return fetch(`${this.baseURL}${path}`, {
+    method: 'DELETE',
+    body: JSON.stringify(body),
+    headers
+  })
+}
+
 export default fetchService

@@ -41,7 +41,15 @@ new Vue({ // eslint-disable-line
 
     getBooks () {
       apiService.getBooks()
-        .then(books => { this.books = books })
+        .then(books => {
+          storage.set('books', books)
+          this.books = books
+        })
+    },
+
+    removeBook (book) {
+      apiService.deleteBook(book._id)
+        .then(res => { this.getBooks() })
     }
   }
 })

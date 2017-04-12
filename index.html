@@ -16,10 +16,10 @@
 
       <div class="container">
         <section>
-          <h3>Books</h3>
-          <ul>
-            <book v-for="b in books" :book="b">
-          </ul>
+            <h3>Books</h3>
+            <ul>
+              <book v-for="b in books" :key="b.name" :book="b" @remove="removeBook">
+            </ul>
         </section>
 
         <section>

@@ -14,6 +14,12 @@ html {
   color: steelblue;
 }
 
+.remove {
+  color: tomato;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 section {
   width: 30%;
 }

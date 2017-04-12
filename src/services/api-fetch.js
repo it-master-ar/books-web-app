@@ -8,6 +8,17 @@ apiService.getBooks = function () {
     .then(res => res.json())
 }
 
+apiService.deleteBook = function (id) {
+  return fetch.del(`/book/${id}`)
+    .then(res => {
+      if (res.status !== 204) {
+        throw new Error()
+      }
+
+      return res
+    })
+}
+
 apiService.createBook = function (book) {
   const headers = { 'Content-Type': 'application/json' }
   return fetch.post('/book', book, headers)
