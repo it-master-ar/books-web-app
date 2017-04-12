@@ -1,48 +1,38 @@
+import Vue from 'vue/dist/vue.js'
+
 import apiService from './api-fetch'
 import storage from './storage'
 
-const booksList = document.getElementById('booksList')
-const bookCreate = document.getElementById('bookCreate')
-const booksRefresh = document.getElementById('booksRefresh')
+new Vue({ // eslint-disable-line
+  el: '#app',
 
-const books = storage.get('books')
+  name: 'BooksApp',
 
-if (books && books.length) {
-  books.forEach((b) => {
-    booksList.innerHTML += `<li>${b.title} - ${b.author}</li>`
-  })
-}
+  data () {
+    return {
+      books: storage.get('books'),
 
-booksRefresh.addEventListener('click', (e) => {
-  e.preventDefault()
+      newBook: {
+        title: '',
+        author: ''
+      }
+    }
+  },
 
-  apiService.getBooks()
-    .then((res) => {
-      storage.set('books', res)
-      console.log(res)
+  created () {
+    this.getBooks()
+  },
 
-      booksList.innerHTML = ''
+  methods: {
+    createBook () {
+      apiService.createBook(this.newBook)
+        .then(res => console.log('✅', res))
+        .catch(err => console.log('❌', err))
+    },
 
-      res.forEach((b) => {
-        booksList.innerHTML += `<li>${b.title} - ${b.author}</li>`
-      })
-    })
-    .catch((err) => {
-      console.log('Error!', err)
-    })
-})
-
-bookCreate.addEventListener('submit', (e) => {
-  e.preventDefault()
-
-  const book = {
-    author: bookCreate.elements.author.value,
-    title: bookCreate.elements.title.value
+    getBooks () {
+      apiService.getBooks()
+        .then(books => { this.books = books })
+    }
   }
-
-  console.log(book)
-
-  apiService.createBook(book)
-    .then(res => console.log('✅', res))
-    .catch(err => console.log('❌', err))
 })

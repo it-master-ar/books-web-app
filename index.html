@@ -7,27 +7,40 @@
       <nav>
         <h1>Books App</h1>
       </nav>
+
+      <hr>
     </header>
 
-    <main>
+    <div id="app">
       <section>
-        <button id="booksRefresh">Refresh</button>
-        <ul id="booksList">
-        </ul>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th><a @click.prevent="getBooks">🔄</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="b in books">
+              <td> {{ b.title }} </td>
+              <td> {{ b.author }}</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
-    </main>
 
-    <section>
-      <form id="bookCreate">
-        <fieldset>
-          <legend>Create Book</legend>
-          <input type="text" placeholder="Author" name="author">
-          <input type="text" placeholder="Title" name="title">
-          <input type="submit" value="Create">
-        </fieldset>
-      </form>
-    </section>
-
+      <section>
+        <form>
+          <fieldset @submit.prevent="createBook">
+            <legend>Create Book</legend>
+            <input type="text" placeholder="Author" v-model="newBook.author">
+            <input type="text" placeholder="Title" v-model="newBook.title">
+            <input type="submit" value="Create">
+          </fieldset>
+        </form>
+      </section>
+    </div>
 
     <script type="text/javascript" src="lib/index.js" charset="utf-8"></script>
   </body>

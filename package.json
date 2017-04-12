@@ -44,6 +44,7 @@
     "eslint"
   ],
   "dependencies": {
-    "axios": "^0.15.3"
+    "axios": "^0.15.3",
+    "vue": "^2.2.6"
   }
 }
