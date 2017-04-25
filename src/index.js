@@ -1,4 +1,4 @@
-import apiService from './api-fetch'
+import apiService from './api'
 import storage from './storage'
 
 const booksList = document.getElementById('booksList')
